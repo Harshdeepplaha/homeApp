@@ -1,26 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Text } from 'native-base';
 import Loginpage from './src/loginPage';
 import Dashboard from './src/Dashboard';
-
+import { NativeBaseProvider } from 'native-base';
+import Signup from './src/signupPage';
 export default function App() {
   return (
-    <View style={styles.container}>
+<NativeBaseProvider>
+<View style={styles.container}>
       
       
-      {/* <Loginpage/> */}
+      {/* <Loginpage/>
+      <Signup/> */}
       <ScrollView style = {styles.container}>
-        <View style = {styles.cards,styles.cardelevated}>
-          <Text  fontSize="xs">Text</Text>
-          
-        </View>
-        <Dashboard/>
        
+      
+       <Dashboard/>
       </ScrollView>
       
      
       <StatusBar style="auto" />
     </View>
+
+
+
+</NativeBaseProvider>
+
+    
   );
 }
 
