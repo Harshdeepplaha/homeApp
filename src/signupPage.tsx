@@ -1,5 +1,5 @@
 import React from "react";
-import { Input,styles, Icon, Stack, Pressable, Center,show, setShow, NativeBaseProvider , Text,Box, Button,Heading,VStack,FormControl,Link,HStack, View} from "native-base";
+import { Input, Icon, Stack, Pressable, Center,show, setShow, NativeBaseProvider , Text,Box, Button,Heading,VStack,FormControl,Link,HStack, View} from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 
 const SignupPage = () => {
