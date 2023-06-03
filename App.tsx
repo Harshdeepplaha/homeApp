@@ -5,6 +5,9 @@ import Loginpage from './src/loginPage';
 import Dashboard from './src/Dashboard';
 import { NativeBaseProvider } from 'native-base';
 import Signup from './src/signupPage';
+import AddRoom from './src/components/AddRoom';
+
+
 export default function App() {
   return (
 <NativeBaseProvider>

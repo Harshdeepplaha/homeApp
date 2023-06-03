@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { ScrollView,Button,Image, Center,Switch } from 'native-base'
-import { color } from 'native-base/lib/typescript/theme/styled-system'
+import AddRoom from './AddRoom';
+
 
 function Example() {
   return <Center>
@@ -21,16 +22,23 @@ export default function Devices() {
         <View style={styles.devicesHeadingandswitch}>
             <Text style={styles.headingTest}>Devices</Text>
             <Text style = {styles.killSwitchText}>Kill Switch</Text>
-        <Switch style={styles.killswitch}/>
+        <Switch  colorScheme='danger' style={styles.killswitch}/>
         </View>
 
         <ScrollView>
+
+            <AddRoom/>
+            
+
+
+            
+          
             <View style={styles.cardDevices}>
                 <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
 
 
                 <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
+                 <Switch style={styles.switches} offTrackColor="indigo.100" onTrackColor="indigo.200" onThumbColor="indigo.500" offThumbColor="indigo.50" />
 
 
             </View>
@@ -39,7 +47,7 @@ export default function Devices() {
 
 
                 <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
+                 <Switch style={styles.switches} offTrackColor="indigo.100" onTrackColor="indigo.200" onThumbColor="indigo.500" offThumbColor="indigo.50" />
 
 
             </View>
@@ -48,7 +56,17 @@ export default function Devices() {
 
 
                 <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
+                {/* <Switch style={styles.switches} /> */}
+                 <Switch style={styles.switches} offTrackColor="indigo.100" onTrackColor="indigo.200" onThumbColor="indigo.500" offThumbColor="indigo.50" />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+                
+                <Text style={styles.cardText}>Text</Text>
+                 <Switch style={styles.switches} offTrackColor="indigo.100" onTrackColor="indigo.200" onThumbColor="indigo.500" offThumbColor="indigo.50" />
 
 
             </View>
@@ -57,7 +75,7 @@ export default function Devices() {
 
 
                 <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
+                 <Switch style={styles.switches} offTrackColor="indigo.100" onTrackColor="indigo.200" onThumbColor="indigo.500" offThumbColor="indigo.50" />
 
 
             </View>
@@ -66,7 +84,7 @@ export default function Devices() {
 
 
                 <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
+                 <Switch style={styles.switches} offTrackColor="indigo.100" onTrackColor="indigo.200" onThumbColor="indigo.500" offThumbColor="indigo.50" />
 
 
             </View>
@@ -75,25 +93,7 @@ export default function Devices() {
 
 
                 <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
-
-
-            </View>
-            <View style={styles.cardDevices}>
-                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
-
-
-                <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
-
-
-            </View>
-            <View style={styles.cardDevices}>
-                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
-
-
-                <Text style={styles.cardText}>Text</Text>
-                <Switch style={styles.switches} />
+                 <Switch style={styles.switches} offTrackColor="indigo.100" onTrackColor="indigo.200" onThumbColor="indigo.500" offThumbColor="indigo.50" />
 
 
             </View>
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
         
         color:'black',
         backgroundColor:'black',
-  height:50,
+  height:60,
   borderWidth:3,
   
   borderRadius:10,
@@ -176,10 +176,30 @@ devicesHeadingandswitch:{
     marginBottom:10
 },
 
+
+addDeviceButton:{
+    height:60,
+    width:'100%',
+    backgroundColor:'black',
+    borderRadius:15,
+    flex:1,
+    flexDirection:'row',
+justifyContent:'center',
+    alignContent:'center',
+    alignItems:'center',
+    marginBottom:5
+
+},
+addButtonText:{
+    color:'white',
+    fontSize:20,
+    fontWeight:'900'
+},
+
     cardAddDevice:{
         width:'100%',
         backgroundColor:'E1D3FF',
-        height:55,
+        height:60,
         borderRadius:10,
         alignContent:'center',
         alignItems:'center'
@@ -187,13 +207,14 @@ devicesHeadingandswitch:{
 
     cardDevices:{
         
-        height:55,
+        height:60,
         backgroundColor:'#E1D3FF',
         borderRadius:15,
         margin:5,
         flex:1,
         flexDirection:'row',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        elevation:3
         
     },
 
