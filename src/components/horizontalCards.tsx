@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View,ScrollView} from 'react-native'
+import { StyleSheet, Text, View,ScrollView ,Image} from 'react-native'
 import React from 'react'
-import { Button } from 'native-base'
+import { Button, Flex } from 'native-base'
 
 
 
@@ -11,7 +11,7 @@ export default function HorizontalCards() {
     <View   style = {styles.contain} >
       <Text  style = {styles.headingTest}>Rooms</Text>
 
-     <Button style = {styles.button} size="sm" variant="subtle" colorScheme="secondary">
+     <Button style = {styles.button} size="sm" variant="subtle" colorScheme='danger'>
             Delete
           </Button>
     </View>
@@ -22,36 +22,40 @@ export default function HorizontalCards() {
     
     
     
-     <ScrollView horizontal = {true}>
-        <Button style = {styles.addRoom}
-          colorScheme="primary"
-          onPress={()=>{
-            console.log('hello')
-          }}
+     <View style = {styles.cardcontainer}>
+      <ScrollView horizontal = {true}>
         
-        >
-          Add Room
         
-        </Button>
-        
+        <View style = {[styles.addroomButton ]}>
+                                    <Image  style={styles.addlogo} source={require('../assets/adddevice.png')} />
+
+        <Text style= {styles.addroomtext} >Add Room</Text>
+        </View>
         <View style = {[styles.cardelevated, styles.cards]}>
+                                              <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
+
         <Text style= {styles.cardText} >Text</Text>
         </View>
         <View style = {[styles.cardelevated, styles.cards]}>
+                                              <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
+
         <Text style= {styles.cardText} >Text</Text>
         </View>
         <View style = {[styles.cardelevated, styles.cards]}>
+                                              <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
+
         <Text style= {styles.cardText} >Text</Text>
         </View>
         <View style = {[styles.cardelevated, styles.cards]}>
-        <Text style= {styles.cardText} >Text</Text>
-        </View>
-        <View style = {[styles.cardelevated, styles.cards]}>
+                                              <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
+
         <Text style= {styles.cardText} >Text</Text>
         </View>
         
         
      </ScrollView>
+     </View>
+     
 
 
 
@@ -82,6 +86,9 @@ contain: {
 container: {
 
   marginTop: 20,
+},
+cardcontainer:{
+  marginTop:10
 }
 
 ,
@@ -98,7 +105,7 @@ button: {
 
 headingTest: {
   fontSize: 24,
-    fontWeight:'bold',
+    fontWeight:'900',
     marginLeft:8,
     marginBottom:10
 }
@@ -109,21 +116,64 @@ cards: {
     height:130,
     width: 100,
     margin:5,
-    backgroundColor:'#EA1763'
+    backgroundColor:'#5B17EA',
+    elevation:3,
+
+
+    justifyContent:'space-around',
+     alignContent:'center',
+     alignItems:'center',
+     flex:1,
+     flexDirection:'column',
+     paddingTop:30,
+     paddingBottom:-20
+
 
 }
 
 ,
 
+
+  addroomButton:{
+    backgroundColor:'black',
+    borderRadius: 15,
+    height:130,
+    width: 100,
+    margin:5,
+     elevation:3,
+     justifyContent:'space-around',
+     alignContent:'center',
+     alignItems:'center',
+     flex:1,
+     flexDirection:'column',
+     paddingTop:30,
+     paddingBottom:-20
+
+     
+  },
+  addlogo:{
+    marginBottom:-90,
+    marginTop:-30
+  },
+
 cardText: {
-  color: '#fff',
+ color: '#fff',
     alignContent:'center',
     fontSize:15,
-    marginLeft:35,
+    fontWeight:'700',
     marginTop:70
 }
 
 ,
+
+ addroomtext:{
+  color: '#fff',
+    alignContent:'center',
+    fontSize:15,
+    fontWeight:'700',
+    marginTop:70
+
+ },
 
 
 cardelevated: {
