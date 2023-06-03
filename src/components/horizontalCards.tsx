@@ -91,6 +91,7 @@ button: {
     borderWidth:3,
     borderColor:'#BC0000',
     borderRadius:10,
+    backgroundColor:'white'
 }
 
 ,

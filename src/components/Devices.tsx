@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { ScrollView,Button,Image, Center } from 'native-base'
+import { ScrollView,Button,Image, Center,Switch } from 'native-base'
 import { color } from 'native-base/lib/typescript/theme/styled-system'
 
 function Example() {
@@ -17,22 +17,92 @@ function Example() {
 
 export default function Devices() {
   return (
-    <View style = {styles.container}>
-        <Text style = {styles.headingTest} >Devices</Text>
-        
+    <View style={styles.container}>
+        <View style={styles.devicesHeadingandswitch}>
+            <Text style={styles.headingTest}>Devices</Text>
+            <Text style = {styles.killSwitchText}>Kill Switch</Text>
+        <Switch style={styles.killswitch}/>
+        </View>
+
         <ScrollView>
-                <View style = {styles.cardDevices}>
-                   
-                    
-                    <Text  style = {styles.cardText} fontSize="xs">Text</Text>
-                    
-                    
-                </View>
-                
-                
-                
-                
-            </ScrollView>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+            <View style={styles.cardDevices}>
+                <Image style={styles.tinyLogo} source={require('E:/reactnative/homeApp/assets/images/Ac.png')} />
+
+
+                <Text style={styles.cardText}>Text</Text>
+                <Switch style={styles.switches} />
+
+
+            </View>
+
+
+
+
+
+        </ScrollView>
 
 
         {/* <Button style={styles.button} size='lg' onPress={()=>{
@@ -43,24 +113,28 @@ export default function Devices() {
             Add Device
         </Button> */}
 
-        <Text  >Text</Text>
-        <Example/>
-         
-      
-           <View>
-            
-           </View>
-           
-            
-       
-        
-        
+        <Text>Text</Text>
 
 
-        
-       
+
+
+
+        <Example />
+
+
+        <View>
+
+        </View>
+
+
+
+
+
+
+
+
+
     </View>
-
     
     
     
@@ -94,6 +168,14 @@ const styles = StyleSheet.create({
   borderRadius:10,
 },
 
+
+devicesHeadingandswitch:{
+    flex:1,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginBottom:10
+},
+
     cardAddDevice:{
         width:'100%',
         backgroundColor:'E1D3FF',
@@ -109,16 +191,43 @@ const styles = StyleSheet.create({
         backgroundColor:'#E1D3FF',
         borderRadius:15,
         margin:5,
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'space-between'
         
     },
 
     cardText:{
         color:'white',
-        fontSize:24,
+        fontSize:14,
         fontWeight: 'bold',
-        marginTop:10
+        marginTop:5,
+        marginLeft:-150
+
         
 
+    },
+
+    tinyLogo:{
+        height:30,
+        width:60,
+        margin:10
+    },
+
+    killSwitchText:{
+        marginTop:8,
+        marginLeft:120,
+        color:'#BC0000'
+    },
+    killswitch:{
+        marginRight:15,
+        marginTop:-10,
+        
+    },
+    switches:{
+        marginRight:10,
+        
+        
     }
 
 
