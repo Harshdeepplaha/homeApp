@@ -1,17 +1,18 @@
 import { StyleSheet, Text, View,ScrollView ,Image} from 'react-native'
 import React from 'react'
-import { Button, Flex } from 'native-base'
+import { Button, Flex, Pressable } from 'native-base'
 
 
 
 
 export default function HorizontalCards() {
   return (
-   <View style = {styles.container}>
+  <View style  = {styles.pagecontainer}>
+     <View style = {styles.container}>
     <View   style = {styles.contain} >
       <Text  style = {styles.headingTest}>Rooms</Text>
 
-     <Button style = {styles.button} size="sm" variant="subtle" colorScheme='danger'>
+     <Button onPress={()=>{console.log('hello')}} style = {styles.button} size="sm" variant="subtle" colorScheme='danger'>
             Delete
           </Button>
     </View>
@@ -26,31 +27,100 @@ export default function HorizontalCards() {
       <ScrollView horizontal = {true}>
         
         
-        <View style = {[styles.addroomButton ]}>
+        <Pressable
+          
+          
+          onPress={()=>{
+            console.log('hello')
+          }}
+        
+        >
+          <View style = {[styles.addroomButton ]}>
                                     <Image  style={styles.addlogo} source={require('../assets/adddevice.png')} />
 
         <Text style= {styles.addroomtext} >Add Room</Text>
         </View>
-        <View style = {[styles.cardelevated, styles.cards]}>
+        </Pressable>
+        
+        <Pressable
+          
+          onPress={()=>{
+            console.log('hello')
+          }}
+        
+        >
+          <View style = {[styles.cardelevated, styles.cards]}>
                                               <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
 
         <Text style= {styles.cardText} >Text</Text>
         </View>
-        <View style = {[styles.cardelevated, styles.cards]}>
+        </Pressable>
+        
+        <Pressable
+          
+          onPress={()=>{
+            console.log('hello')
+          }}
+        
+        >
+          <View style = {[styles.cardelevated, styles.cards]}>
                                               <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
 
         <Text style= {styles.cardText} >Text</Text>
         </View>
-        <View style = {[styles.cardelevated, styles.cards]}>
+        </Pressable>
+        <Pressable
+          
+          onPress={()=>{
+            console.log('hello')
+          }}
+        
+        >
+          <View style = {[styles.cardelevated, styles.cards]}>
                                               <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
 
         <Text style= {styles.cardText} >Text</Text>
         </View>
-        <View style = {[styles.cardelevated, styles.cards]}>
+        </Pressable>
+        <Pressable
+          
+          onPress={()=>{
+            console.log('hello')
+          }}
+        
+        >
+          <View style = {[styles.cardelevated, styles.cards]}>
                                               <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
 
         <Text style= {styles.cardText} >Text</Text>
         </View>
+        </Pressable>
+        <Pressable
+          
+          onPress={()=>{
+            console.log('hello')
+          }}
+        
+        >
+          <View style = {[styles.cardelevated, styles.cards]}>
+                                              <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
+
+        <Text style= {styles.cardText} >Text</Text>
+        </View>
+        </Pressable>
+        <Pressable
+          
+          onPress={()=>{
+            console.log('hello')
+          }}
+        
+        >
+          <View style = {[styles.cardelevated, styles.cards]}>
+                                              <Image style={styles.addlogo} source={require('../assets/adddevice.png')} />
+
+        <Text style= {styles.cardText} >Text</Text>
+        </View>
+        </Pressable>
         
         
      </ScrollView>
@@ -65,6 +135,7 @@ export default function HorizontalCards() {
   
    </View>
    
+  </View>
    
    
    
@@ -73,9 +144,14 @@ export default function HorizontalCards() {
 
 const styles = StyleSheet.create({
 
+  pagecontainer:{
+    margin:10
+  },
+
 contain: {
+  
   flexDirection: 'row',
-    flex:1,
+    
     justifyContent:'space-between',
 
 }
@@ -88,6 +164,7 @@ container: {
   marginTop: 20,
 },
 cardcontainer:{
+  
   marginTop:10
 }
 
@@ -123,7 +200,7 @@ cards: {
     justifyContent:'space-around',
      alignContent:'center',
      alignItems:'center',
-     flex:1,
+    
      flexDirection:'column',
      paddingTop:30,
      paddingBottom:-20
