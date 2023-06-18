@@ -9,7 +9,7 @@ import {
   StackedBarChart
 } from "react-native-chart-kit";
 import { Dimensions } from 'react-native';
-import { db } from '../config/firebase';
+import firebase, { db } from '../config/firebase';
 import { ref, onValue } from 'firebase/database';
 
 
@@ -19,33 +19,83 @@ import { ref, onValue } from 'firebase/database';
 
 
 
+// let arr = [30,20,40,65,75,41,87]
+
+
 let arr = [30,20,40,65,75,41,87]
-
-
-
 
 
 
 const Graph = () => {
 
-  interface MyData {
-  id: number;
-  name: string;
-}
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
 
 
-const [dataArray, updateDataArray] =  useState<MyData[]>([]);
-
-
-
-    const starCountRef = ref(db, 'sensorData/');
+ const starCountRef = ref(db, 'sensorData/');
 onValue(starCountRef, (snapshot) => {
 //   const value = snapshot.val()
   
-    const value = snapshot.val() ;
-  updateDataArray(dataArray.push(value))
+    const newData = snapshot.val();
+      setData(newData);
+            arr.shift();
+      arr.push(newData);
+      
+      console.log(arr)
 });
 
+
+
+
+   
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   interface MyData {
+//   id: number;
+//   name: string;
+// }
+
+
+// const [dataArray, updateDataArray] =  useState<MyData[]>([]);
+
+
+
+   
     
 
 
@@ -58,14 +108,15 @@ onValue(starCountRef, (snapshot) => {
 //     console.log(i)
 // }
 
-console.log(dataArray)
+// console.log(dataArray)
     
     
     return (
-    <View    >
-     <LineChart
+    <View>
+  <Text>Bezier Line Chart</Text>
+  <LineChart
     data={{
-      labels: [],
+      labels: ["January", "February", "March", "April", "May", "June", 'july'],
       datasets: [
         {
           data: arr
@@ -85,7 +136,6 @@ console.log(dataArray)
       color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
       labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
       style: {
-        padding:10,
         borderRadius: 16
       },
       propsForDots: {
@@ -96,13 +146,11 @@ console.log(dataArray)
     }}
     bezier
     style={{
-        marginTop:10,
-        margin:10,
       marginVertical: 8,
       borderRadius: 16
     }}
   />
-    </View>
+</View>
   )
     
     
