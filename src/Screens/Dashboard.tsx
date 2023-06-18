@@ -9,10 +9,12 @@ import { Button } from 'native-base'
 
 
 
-import { useEffect, useState } from 'react'
+
 
 
 import Graph from './graph'
+import RealtimeDataPlot from '../components/Graph'
+import Graph1 from '../components/Graph'
 
 const user = auth.currentUser
 
@@ -40,13 +42,7 @@ const handleSignout = () => {
 
 export default function Dashboard() {
 
-useEffect(() =>{
 
-
-
-
-    
-})
 
 
 
@@ -58,7 +54,7 @@ useEffect(() =>{
 
   return (
     <View style = {styles.container}>
-      <Button
+      {/* <Button
         colorScheme="primary"
         onPress={()=>{
           handleSignout
@@ -66,11 +62,12 @@ useEffect(() =>{
       
       >
         Signout
-      </Button>
+      </Button> */}
 
 
       <View  >
         <Graph  />
+        <Graph1/>
       </View>
       
       
